@@ -79,7 +79,7 @@ public class ProjectileLine : MonoBehaviour
             {
                 return (Vector3.zero);
             }
-            return (points[points.Count - 1]);
+            return (points[points.Count-1]);
         }
     }
 
@@ -103,6 +103,7 @@ public class ProjectileLine : MonoBehaviour
                 return;
             }
         }
+        AddPoint();
         if(FollowCam.POI == null)
         {
             poi = null;

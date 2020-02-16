@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    static public bool goalMet = false;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.tag == "Projectile")
+        {
+            Goal.goalMet = true;
+            Material mat = GetComponent<Renderer>().material;
+            Color c = mat.color;
+            c.a = 1;
+            mat.color = c;
+        }
     }
 }
